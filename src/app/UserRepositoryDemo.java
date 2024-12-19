@@ -9,14 +9,6 @@ public class UserRepositoryDemo {
     static UserRepository userRepository = new UserRepository();
     static Scanner scanner = new Scanner(System.in);
 
-    public void fillRepository() {
-        userRepository.addUser(new User(1, "Alice", "alice@test.com"));
-        userRepository.addUser(new User(2, "Bob", "bob@test.com"));
-        userRepository.addUser(new User(3, "Tom", "tom@test.com"));
-        userRepository.addUser(new User(4, "John", "john@test.com"));
-        userRepository.addUser(new User(5, "Peter", "peter@test.com"));
-    }
-
     private static void findUserByIdDemo(int id) {
         userRepository.findUserById(id).ifPresentOrElse(user -> System.out.println("Found user by ID: " + user), () -> System.out.println("User with ID " + id + " not found"));
     }
@@ -32,7 +24,7 @@ public class UserRepositoryDemo {
         }, () -> System.out.println("No users found"));
     }
 
-    public static void demoValidatedUserId() {
+    public void demoValidatedUserId() {
         System.out.print("\nPlease, enter the user's id: ");
         String id = scanner.next();
         try {
@@ -43,7 +35,7 @@ public class UserRepositoryDemo {
         }
     }
 
-    public static void demoFindUserByMail() {
+    public void demoFindUserByMail() {
         System.out.print("\nPlease, enter the user's email: ");
         String email = scanner.next();
         try {
