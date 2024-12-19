@@ -6,22 +6,18 @@ import java.util.Optional;
 
 public class UserRepository {
 
-    private final List<User> users = new ArrayList<>();
-
-    public void addUser(User user) {
-        users.add(user);
-    }
+    DataRepository dataRepo = new DataRepository();
 
     public Optional<User> findUserById(int id) {
-        return users.stream().filter(user -> user.getId() == id).findFirst();
+        return dataRepo.getData().stream().filter(user -> user.getId() == id).findFirst();
     }
 
     public Optional<User> findUserByEmail(String email) {
-        return users.stream().filter(user -> user.getEmail().equalsIgnoreCase(email)).findFirst();
+        return dataRepo.getData().stream().filter(user -> user.getEmail().equalsIgnoreCase(email)).findFirst();
     }
 
     public Optional<List<User>> findAllUsers() {
-        return users.isEmpty() ? Optional.empty() : Optional.of(new ArrayList<>(users));
+        return dataRepo.getData().isEmpty() ? Optional.empty() : Optional.of(new ArrayList<>(dataRepo.getData()));
     }
 }
 
