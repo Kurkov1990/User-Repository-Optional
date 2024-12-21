@@ -1,12 +1,14 @@
-package app;
+package app.view;
+
+import app.controller.UserRepositoryService;
 
 import java.util.Scanner;
 
 import static app.Main.appValidator;
 
-public class UserRepositoryDemo {
+public class UserRepositoryView {
 
-    static UserRepository userRepository = new UserRepository();
+    static UserRepositoryService userRepository = new UserRepositoryService();
     static Scanner scanner = new Scanner(System.in);
 
     private static void findUserByIdDemo(int id) {

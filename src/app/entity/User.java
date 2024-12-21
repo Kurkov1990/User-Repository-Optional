@@ -1,4 +1,4 @@
-package app;
+package app.entity;
 
 public class User {
     private int id;

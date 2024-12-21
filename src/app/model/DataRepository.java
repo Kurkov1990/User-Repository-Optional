@@ -1,4 +1,6 @@
-package app;
+package app.model;
+
+import app.entity.User;
 
 import java.util.Arrays;
 import java.util.List;

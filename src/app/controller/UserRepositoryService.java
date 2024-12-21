@@ -1,10 +1,13 @@
-package app;
+package app.controller;
+
+import app.entity.User;
+import app.model.DataRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class UserRepository {
+public class UserRepositoryService {
 
     DataRepository dataRepo = new DataRepository();
 
